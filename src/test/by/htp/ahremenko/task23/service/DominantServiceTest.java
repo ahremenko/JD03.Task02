@@ -1,5 +1,6 @@
-package by.htp.ahremenko.task21.service;
+package by.htp.ahremenko.task23.service;
 
+import by.htp.ahremenko.task23.service.DominantService;
 import org.junit.Test;
 
 import java.util.ArrayList;
