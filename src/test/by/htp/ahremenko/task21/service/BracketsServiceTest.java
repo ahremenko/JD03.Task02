@@ -48,5 +48,4 @@ public class BracketsServiceTest {
         assertFalse(actual);
     }
 
-
 }
