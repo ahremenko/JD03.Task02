@@ -3,70 +3,25 @@ package by.duallab.ahremenko;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * реализовать задачу поиска минимального числа переговорок для списка встреч
+ *  (встреча - это пара значений "время начала" и "время окончания")
+ */
+
 public class Solution {
-
-    public class Task  implements Comparable<Task>{
-        private long startTime;
-        private long finishTime;
-
-        public Task(long startTime, long finishTime) {
-            this.startTime = startTime;
-            this.finishTime = finishTime;
-        }
-
-        public long getStartTime() {
-            return startTime;
-        }
-
-        public long getFinishTime() {
-            return finishTime;
-        }
-
-        @Override
-        public int compareTo(Task another) {
-            if (this.getStartTime()<another.getStartTime()){
-                return -1;
-            } else {
-                return 1;
-            }
-        }
-    }
-
-    public class MeetingRooms {
-
-        private List<Double> rooms = new ArrayList<>();  // необходимые переговорки, элементы содержат время окончания митингов
-
-        public void putNewTask(Task task) {
-            Integer freeRoomFound = null;
-            for (int i = 0; i < rooms.size(); i++) {
-                if (task.getStartTime() >= rooms.get(i))
-                    freeRoomFound = i;
-                break;
-            }
-            if (freeRoomFound == null) {
-                rooms.add((double)task.getFinishTime());
-            } else {
-                rooms.set(freeRoomFound, (double)task.getFinishTime());
-            }
-        }
-
-        public List<Double> getRooms() {
-            return rooms;
-        }
-    }
 
     public int getMaxRooms(List<Task> tasks) {
         MeetingRooms meetingRooms = new MeetingRooms();
+        Collections.sort(tasks);
         tasks.forEach( t -> meetingRooms.putNewTask(t));
         return meetingRooms.getRooms().size();
     }
 
+    // TODO: методы main и fillTasks следует оформить как unit-тест
     public static void main(String[] args) throws java.text.ParseException {
-
         List<Task> tasks = new ArrayList<>();
         Solution solution = new Solution();
         solution.fillTasks(tasks); // заполняем список встреч
-        Collections.sort(tasks);
         int maxRooms = solution.getMaxRooms(tasks); // ищем число митинг-румов
         System.out.println(maxRooms);
     }
