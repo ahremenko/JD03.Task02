@@ -2,7 +2,8 @@ package by.htp.ahremenko.task21.service;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class BracketsServiceTest {
 
