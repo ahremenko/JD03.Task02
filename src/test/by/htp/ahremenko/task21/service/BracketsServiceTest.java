@@ -48,5 +48,4 @@ public class BracketsServiceTest {
         boolean actual = service.handleBrackets("]{}");
         assertFalse(actual);
     }
-
 }
