@@ -4,6 +4,7 @@ import by.htp.ahremenko.task23.service.DominantService;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -13,12 +14,7 @@ public class DominantServiceTest {
 
     @Test
     public void handle() {
-        List<Integer> list = new ArrayList<>();
-        list.add(10);
-        list.add(9);
-        list.add(9);
-        list.add(10);
-        list.add(9);
+        List<Integer> list = new ArrayList<>(Arrays.asList(10, 9, 9, 10, 9));
         int actual = DominantService.handle(list);
         int expected = 9;
         assertEquals(expected, actual);
@@ -26,14 +22,7 @@ public class DominantServiceTest {
 
     @Test
     public void handle2() {
-        List<Integer> list = new ArrayList<>();
-        list.add(2);
-        list.add(2);
-        list.add(1);
-        list.add(1);
-        list.add(2);
-        list.add(2);
-        list.add(3);
+        List<Integer> list = new ArrayList<>(Arrays.asList(2, 2, 1, 1, 2, 2, 3));
         int actual = DominantService.handle(list);
         int expected = 2;
         assertEquals(expected, actual);
@@ -41,13 +30,7 @@ public class DominantServiceTest {
 
     @Test
     public void handleNoDominant() {
-        List<Integer> list = new ArrayList<>();
-        list.add(2);
-        list.add(2);
-        list.add(1);
-        list.add(1);
-        list.add(3);
-        list.add(3);
+        List<Integer> list = new ArrayList<>(Arrays.asList(2, 2, 1, 1, 3, 3));
         Integer actual = DominantService.handle(list);
         assertNull(actual);
     }

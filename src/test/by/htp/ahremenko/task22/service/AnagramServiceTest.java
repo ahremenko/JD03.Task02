@@ -4,6 +4,7 @@ import by.htp.ahremenko.task22.service.AnagramService;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -13,31 +14,18 @@ public class AnagramServiceTest {
     @Test
     public void handle() {
 
-        List<String> list = new ArrayList<>();
-        list.add("eat");
-        list.add("tEa");
-        list.add("tan");
-        list.add("ate");
-        list.add("nat");
-        list.add("bat");
+        List<String> list = new ArrayList<>(Arrays.asList("eat", "tEa", "tan", "ate", "nat", "bat"));
         List<List<String>> actualList = AnagramService.handle(list);
 
         List<List<String>> expectedList = new ArrayList<>();
 
-        List<String> list1 = new ArrayList<>();
-        list1.add("ate");
-        list1.add("eat");
-        list1.add("tEa");
+        List<String> list1 = new ArrayList<>(Arrays.asList("ate", "eat", "tEa"));
         expectedList.add(list1);
 
-        List<String> list2 = new ArrayList<>();
-        list2.add("nat");
-        list2.add("tan");
+        List<String> list2 = new ArrayList<>(Arrays.asList("nat", "tan"));
         expectedList.add(list2);
 
-        List<String> list3 = new ArrayList<>();
-        list3.clear();
-        list3.add("bat");
+        List<String> list3 = new ArrayList<>(Arrays.asList("bat"));
         expectedList.add(list3);
 
         for (int i = 0; i < expectedList.size(); i++) {
