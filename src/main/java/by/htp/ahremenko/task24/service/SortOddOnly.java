@@ -21,16 +21,20 @@ public final class SortOddOnly {
 
     public static List<Integer> handle(List<Integer> list) {
         List<Integer> sortedList = new ArrayList<>();
+        List<Integer> oddElementPositions = new ArrayList<Integer>();
         for (int i = 0; i < list.size(); i++) {
-            if (i % 2 == 0) {
+            if (list.get(i) % 2 == 1) {
                 sortedList.add(list.get(i));
+                oddElementPositions.add(i);
             }
         }
         Collections.sort(sortedList);
         List<Integer> resultList = new ArrayList<>();
+        int j = 0;
         for (int i = 0; i < list.size(); i++) {
-            if (i % 2 == 0) {
-                resultList.add(sortedList.get(i / 2));
+            if (list.get(i) % 2 == 1) {
+                resultList.add(sortedList.get(j));
+                j++;
             } else {
                 resultList.add(list.get(i));
             }
