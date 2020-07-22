@@ -21,11 +21,9 @@ public final class SortOddOnly {
 
     public static List<Integer> handle(List<Integer> list) {
         List<Integer> sortedList = new ArrayList<>();
-        List<Integer> oddElementPositions = new ArrayList<Integer>();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) % 2 == 1) {
                 sortedList.add(list.get(i));
-                oddElementPositions.add(i);
             }
         }
         Collections.sort(sortedList);
