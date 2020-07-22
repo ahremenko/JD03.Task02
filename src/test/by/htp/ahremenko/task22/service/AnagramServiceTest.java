@@ -19,7 +19,7 @@ public class AnagramServiceTest {
 
         List<List<String>> expectedList = new ArrayList<>();
 
-        List<String> list1 = new ArrayList<>(Arrays.asList("ate", "eat", "tEa"));
+        List<String> list1 = new ArrayList<>(Arrays.asList("ate", "eaT", "tEa"));
         expectedList.add(list1);
 
         List<String> list2 = new ArrayList<>(Arrays.asList("nat", "tan"));
