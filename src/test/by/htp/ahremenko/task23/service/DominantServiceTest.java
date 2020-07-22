@@ -30,7 +30,7 @@ public class DominantServiceTest {
 
     @Test
     public void handleNoDominant() {
-        List<Integer> list = new ArrayList<>(Arrays.asList(2, 2, 1, 1, 3, 3));
+        List<Integer> list = new ArrayList<>(Arrays.asList(2, 2, 1, 1, 4, 4));
         Integer actual = DominantService.handle(list);
         assertNull(actual);
     }
