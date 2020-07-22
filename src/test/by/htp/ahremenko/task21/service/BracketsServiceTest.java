@@ -38,7 +38,7 @@ public class BracketsServiceTest {
     @Test
     public void handleBracketsFalse2() {
         BracketsService service = new BracketsService();
-        boolean actual = service.handleBrackets("[{[()}]");
+        boolean actual = service.handleBrackets("[{[()}]()");
         assertFalse(actual);
     }
 
